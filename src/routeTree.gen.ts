@@ -23,6 +23,15 @@ import { Route as ApiSearchLyricsRouteImport } from './routes/api.search.lyrics'
 import { Route as ApiSearchGoogleRouteImport } from './routes/api.search.google'
 import { Route as ApiFunMemeRouteImport } from './routes/api.fun.meme'
 import { Route as ApiFunJokeRouteImport } from './routes/api.fun.joke'
+import { Route as ApiDownloadYtmp4RouteImport } from './routes/api.download.ytmp4'
+import { Route as ApiDownloadYtmp3RouteImport } from './routes/api.download.ytmp3'
+import { Route as ApiDownloadTwitterRouteImport } from './routes/api.download.twitter'
+import { Route as ApiDownloadTiktokRouteImport } from './routes/api.download.tiktok'
+import { Route as ApiDownloadSpotifyRouteImport } from './routes/api.download.spotify'
+import { Route as ApiDownloadSoundcloudRouteImport } from './routes/api.download.soundcloud'
+import { Route as ApiDownloadPinterestRouteImport } from './routes/api.download.pinterest'
+import { Route as ApiDownloadInstagramRouteImport } from './routes/api.download.instagram'
+import { Route as ApiDownloadFacebookRouteImport } from './routes/api.download.facebook'
 import { Route as ApiAnimeWaifuRouteImport } from './routes/api.anime.waifu'
 import { Route as ApiAnimeQuoteRouteImport } from './routes/api.anime.quote'
 import { Route as ApiAiImagineRouteImport } from './routes/api.ai.imagine'
@@ -101,6 +110,51 @@ const ApiFunJokeRoute = ApiFunJokeRouteImport.update({
   path: '/api/fun/joke',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiDownloadYtmp4Route = ApiDownloadYtmp4RouteImport.update({
+  id: '/api/download/ytmp4',
+  path: '/api/download/ytmp4',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiDownloadYtmp3Route = ApiDownloadYtmp3RouteImport.update({
+  id: '/api/download/ytmp3',
+  path: '/api/download/ytmp3',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiDownloadTwitterRoute = ApiDownloadTwitterRouteImport.update({
+  id: '/api/download/twitter',
+  path: '/api/download/twitter',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiDownloadTiktokRoute = ApiDownloadTiktokRouteImport.update({
+  id: '/api/download/tiktok',
+  path: '/api/download/tiktok',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiDownloadSpotifyRoute = ApiDownloadSpotifyRouteImport.update({
+  id: '/api/download/spotify',
+  path: '/api/download/spotify',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiDownloadSoundcloudRoute = ApiDownloadSoundcloudRouteImport.update({
+  id: '/api/download/soundcloud',
+  path: '/api/download/soundcloud',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiDownloadPinterestRoute = ApiDownloadPinterestRouteImport.update({
+  id: '/api/download/pinterest',
+  path: '/api/download/pinterest',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiDownloadInstagramRoute = ApiDownloadInstagramRouteImport.update({
+  id: '/api/download/instagram',
+  path: '/api/download/instagram',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiDownloadFacebookRoute = ApiDownloadFacebookRouteImport.update({
+  id: '/api/download/facebook',
+  path: '/api/download/facebook',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiAnimeWaifuRoute = ApiAnimeWaifuRouteImport.update({
   id: '/api/anime/waifu',
   path: '/api/anime/waifu',
@@ -151,6 +205,15 @@ export interface FileRoutesByFullPath {
   '/api/ai/imagine': typeof ApiAiImagineRoute
   '/api/anime/quote': typeof ApiAnimeQuoteRoute
   '/api/anime/waifu': typeof ApiAnimeWaifuRoute
+  '/api/download/facebook': typeof ApiDownloadFacebookRoute
+  '/api/download/instagram': typeof ApiDownloadInstagramRoute
+  '/api/download/pinterest': typeof ApiDownloadPinterestRoute
+  '/api/download/soundcloud': typeof ApiDownloadSoundcloudRoute
+  '/api/download/spotify': typeof ApiDownloadSpotifyRoute
+  '/api/download/tiktok': typeof ApiDownloadTiktokRoute
+  '/api/download/twitter': typeof ApiDownloadTwitterRoute
+  '/api/download/ytmp3': typeof ApiDownloadYtmp3Route
+  '/api/download/ytmp4': typeof ApiDownloadYtmp4Route
   '/api/fun/joke': typeof ApiFunJokeRoute
   '/api/fun/meme': typeof ApiFunMemeRoute
   '/api/search/google': typeof ApiSearchGoogleRoute
@@ -174,6 +237,15 @@ export interface FileRoutesByTo {
   '/api/ai/imagine': typeof ApiAiImagineRoute
   '/api/anime/quote': typeof ApiAnimeQuoteRoute
   '/api/anime/waifu': typeof ApiAnimeWaifuRoute
+  '/api/download/facebook': typeof ApiDownloadFacebookRoute
+  '/api/download/instagram': typeof ApiDownloadInstagramRoute
+  '/api/download/pinterest': typeof ApiDownloadPinterestRoute
+  '/api/download/soundcloud': typeof ApiDownloadSoundcloudRoute
+  '/api/download/spotify': typeof ApiDownloadSpotifyRoute
+  '/api/download/tiktok': typeof ApiDownloadTiktokRoute
+  '/api/download/twitter': typeof ApiDownloadTwitterRoute
+  '/api/download/ytmp3': typeof ApiDownloadYtmp3Route
+  '/api/download/ytmp4': typeof ApiDownloadYtmp4Route
   '/api/fun/joke': typeof ApiFunJokeRoute
   '/api/fun/meme': typeof ApiFunMemeRoute
   '/api/search/google': typeof ApiSearchGoogleRoute
@@ -198,6 +270,15 @@ export interface FileRoutesById {
   '/api/ai/imagine': typeof ApiAiImagineRoute
   '/api/anime/quote': typeof ApiAnimeQuoteRoute
   '/api/anime/waifu': typeof ApiAnimeWaifuRoute
+  '/api/download/facebook': typeof ApiDownloadFacebookRoute
+  '/api/download/instagram': typeof ApiDownloadInstagramRoute
+  '/api/download/pinterest': typeof ApiDownloadPinterestRoute
+  '/api/download/soundcloud': typeof ApiDownloadSoundcloudRoute
+  '/api/download/spotify': typeof ApiDownloadSpotifyRoute
+  '/api/download/tiktok': typeof ApiDownloadTiktokRoute
+  '/api/download/twitter': typeof ApiDownloadTwitterRoute
+  '/api/download/ytmp3': typeof ApiDownloadYtmp3Route
+  '/api/download/ytmp4': typeof ApiDownloadYtmp4Route
   '/api/fun/joke': typeof ApiFunJokeRoute
   '/api/fun/meme': typeof ApiFunMemeRoute
   '/api/search/google': typeof ApiSearchGoogleRoute
@@ -223,6 +304,15 @@ export interface FileRouteTypes {
     | '/api/ai/imagine'
     | '/api/anime/quote'
     | '/api/anime/waifu'
+    | '/api/download/facebook'
+    | '/api/download/instagram'
+    | '/api/download/pinterest'
+    | '/api/download/soundcloud'
+    | '/api/download/spotify'
+    | '/api/download/tiktok'
+    | '/api/download/twitter'
+    | '/api/download/ytmp3'
+    | '/api/download/ytmp4'
     | '/api/fun/joke'
     | '/api/fun/meme'
     | '/api/search/google'
@@ -246,6 +336,15 @@ export interface FileRouteTypes {
     | '/api/ai/imagine'
     | '/api/anime/quote'
     | '/api/anime/waifu'
+    | '/api/download/facebook'
+    | '/api/download/instagram'
+    | '/api/download/pinterest'
+    | '/api/download/soundcloud'
+    | '/api/download/spotify'
+    | '/api/download/tiktok'
+    | '/api/download/twitter'
+    | '/api/download/ytmp3'
+    | '/api/download/ytmp4'
     | '/api/fun/joke'
     | '/api/fun/meme'
     | '/api/search/google'
@@ -269,6 +368,15 @@ export interface FileRouteTypes {
     | '/api/ai/imagine'
     | '/api/anime/quote'
     | '/api/anime/waifu'
+    | '/api/download/facebook'
+    | '/api/download/instagram'
+    | '/api/download/pinterest'
+    | '/api/download/soundcloud'
+    | '/api/download/spotify'
+    | '/api/download/tiktok'
+    | '/api/download/twitter'
+    | '/api/download/ytmp3'
+    | '/api/download/ytmp4'
     | '/api/fun/joke'
     | '/api/fun/meme'
     | '/api/search/google'
@@ -292,6 +400,15 @@ export interface RootRouteChildren {
   ApiAiImagineRoute: typeof ApiAiImagineRoute
   ApiAnimeQuoteRoute: typeof ApiAnimeQuoteRoute
   ApiAnimeWaifuRoute: typeof ApiAnimeWaifuRoute
+  ApiDownloadFacebookRoute: typeof ApiDownloadFacebookRoute
+  ApiDownloadInstagramRoute: typeof ApiDownloadInstagramRoute
+  ApiDownloadPinterestRoute: typeof ApiDownloadPinterestRoute
+  ApiDownloadSoundcloudRoute: typeof ApiDownloadSoundcloudRoute
+  ApiDownloadSpotifyRoute: typeof ApiDownloadSpotifyRoute
+  ApiDownloadTiktokRoute: typeof ApiDownloadTiktokRoute
+  ApiDownloadTwitterRoute: typeof ApiDownloadTwitterRoute
+  ApiDownloadYtmp3Route: typeof ApiDownloadYtmp3Route
+  ApiDownloadYtmp4Route: typeof ApiDownloadYtmp4Route
   ApiFunJokeRoute: typeof ApiFunJokeRoute
   ApiFunMemeRoute: typeof ApiFunMemeRoute
   ApiSearchGoogleRoute: typeof ApiSearchGoogleRoute
@@ -402,6 +519,69 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiFunJokeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/download/ytmp4': {
+      id: '/api/download/ytmp4'
+      path: '/api/download/ytmp4'
+      fullPath: '/api/download/ytmp4'
+      preLoaderRoute: typeof ApiDownloadYtmp4RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/download/ytmp3': {
+      id: '/api/download/ytmp3'
+      path: '/api/download/ytmp3'
+      fullPath: '/api/download/ytmp3'
+      preLoaderRoute: typeof ApiDownloadYtmp3RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/download/twitter': {
+      id: '/api/download/twitter'
+      path: '/api/download/twitter'
+      fullPath: '/api/download/twitter'
+      preLoaderRoute: typeof ApiDownloadTwitterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/download/tiktok': {
+      id: '/api/download/tiktok'
+      path: '/api/download/tiktok'
+      fullPath: '/api/download/tiktok'
+      preLoaderRoute: typeof ApiDownloadTiktokRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/download/spotify': {
+      id: '/api/download/spotify'
+      path: '/api/download/spotify'
+      fullPath: '/api/download/spotify'
+      preLoaderRoute: typeof ApiDownloadSpotifyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/download/soundcloud': {
+      id: '/api/download/soundcloud'
+      path: '/api/download/soundcloud'
+      fullPath: '/api/download/soundcloud'
+      preLoaderRoute: typeof ApiDownloadSoundcloudRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/download/pinterest': {
+      id: '/api/download/pinterest'
+      path: '/api/download/pinterest'
+      fullPath: '/api/download/pinterest'
+      preLoaderRoute: typeof ApiDownloadPinterestRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/download/instagram': {
+      id: '/api/download/instagram'
+      path: '/api/download/instagram'
+      fullPath: '/api/download/instagram'
+      preLoaderRoute: typeof ApiDownloadInstagramRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/download/facebook': {
+      id: '/api/download/facebook'
+      path: '/api/download/facebook'
+      fullPath: '/api/download/facebook'
+      preLoaderRoute: typeof ApiDownloadFacebookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/anime/waifu': {
       id: '/api/anime/waifu'
       path: '/api/anime/waifu'
@@ -479,6 +659,15 @@ const rootRouteChildren: RootRouteChildren = {
   ApiAiImagineRoute: ApiAiImagineRoute,
   ApiAnimeQuoteRoute: ApiAnimeQuoteRoute,
   ApiAnimeWaifuRoute: ApiAnimeWaifuRoute,
+  ApiDownloadFacebookRoute: ApiDownloadFacebookRoute,
+  ApiDownloadInstagramRoute: ApiDownloadInstagramRoute,
+  ApiDownloadPinterestRoute: ApiDownloadPinterestRoute,
+  ApiDownloadSoundcloudRoute: ApiDownloadSoundcloudRoute,
+  ApiDownloadSpotifyRoute: ApiDownloadSpotifyRoute,
+  ApiDownloadTiktokRoute: ApiDownloadTiktokRoute,
+  ApiDownloadTwitterRoute: ApiDownloadTwitterRoute,
+  ApiDownloadYtmp3Route: ApiDownloadYtmp3Route,
+  ApiDownloadYtmp4Route: ApiDownloadYtmp4Route,
   ApiFunJokeRoute: ApiFunJokeRoute,
   ApiFunMemeRoute: ApiFunMemeRoute,
   ApiSearchGoogleRoute: ApiSearchGoogleRoute,
@@ -491,3 +680,12 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}
