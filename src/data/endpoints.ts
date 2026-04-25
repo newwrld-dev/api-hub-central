@@ -17,7 +17,10 @@ export interface Category {
   endpoints: Endpoint[];
 }
 
-export const API_BASE = "https://api.popkidtech.dev";
+// Same-origin: in the browser the tester hits our own /api/* routes.
+// In SSR we fall back to a placeholder (it's only used for display).
+export const API_BASE =
+  typeof window !== "undefined" ? window.location.origin : "https://popkid-api.lovable.app";
 export const TEST_API_KEY = "popkid";
 
 export const categories: Category[] = [
