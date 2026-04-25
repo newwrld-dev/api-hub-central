@@ -18,6 +18,13 @@ import { Route as EndpointsCategoryRouteImport } from './routes/endpoints.$categ
 import { Route as ApiToolsSswebRouteImport } from './routes/api.tools.ssweb'
 import { Route as ApiToolsShortenRouteImport } from './routes/api.tools.shorten'
 import { Route as ApiToolsQrRouteImport } from './routes/api.tools.qr'
+import { Route as ApiStalkerGithubRouteImport } from './routes/api.stalker.github'
+import { Route as ApiSearchLyricsRouteImport } from './routes/api.search.lyrics'
+import { Route as ApiSearchGoogleRouteImport } from './routes/api.search.google'
+import { Route as ApiFunMemeRouteImport } from './routes/api.fun.meme'
+import { Route as ApiFunJokeRouteImport } from './routes/api.fun.joke'
+import { Route as ApiAnimeWaifuRouteImport } from './routes/api.anime.waifu'
+import { Route as ApiAnimeQuoteRouteImport } from './routes/api.anime.quote'
 import { Route as ApiAiImagineRouteImport } from './routes/api.ai.imagine'
 import { Route as ApiAiGpt4oRouteImport } from './routes/api.ai.gpt4o'
 import { Route as ApiAiGeminiRouteImport } from './routes/api.ai.gemini'
@@ -69,6 +76,41 @@ const ApiToolsQrRoute = ApiToolsQrRouteImport.update({
   path: '/api/tools/qr',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiStalkerGithubRoute = ApiStalkerGithubRouteImport.update({
+  id: '/api/stalker/github',
+  path: '/api/stalker/github',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiSearchLyricsRoute = ApiSearchLyricsRouteImport.update({
+  id: '/api/search/lyrics',
+  path: '/api/search/lyrics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiSearchGoogleRoute = ApiSearchGoogleRouteImport.update({
+  id: '/api/search/google',
+  path: '/api/search/google',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiFunMemeRoute = ApiFunMemeRouteImport.update({
+  id: '/api/fun/meme',
+  path: '/api/fun/meme',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiFunJokeRoute = ApiFunJokeRouteImport.update({
+  id: '/api/fun/joke',
+  path: '/api/fun/joke',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAnimeWaifuRoute = ApiAnimeWaifuRouteImport.update({
+  id: '/api/anime/waifu',
+  path: '/api/anime/waifu',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAnimeQuoteRoute = ApiAnimeQuoteRouteImport.update({
+  id: '/api/anime/quote',
+  path: '/api/anime/quote',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiAiImagineRoute = ApiAiImagineRouteImport.update({
   id: '/api/ai/imagine',
   path: '/api/ai/imagine',
@@ -107,6 +149,13 @@ export interface FileRoutesByFullPath {
   '/api/ai/gemini': typeof ApiAiGeminiRoute
   '/api/ai/gpt4o': typeof ApiAiGpt4oRoute
   '/api/ai/imagine': typeof ApiAiImagineRoute
+  '/api/anime/quote': typeof ApiAnimeQuoteRoute
+  '/api/anime/waifu': typeof ApiAnimeWaifuRoute
+  '/api/fun/joke': typeof ApiFunJokeRoute
+  '/api/fun/meme': typeof ApiFunMemeRoute
+  '/api/search/google': typeof ApiSearchGoogleRoute
+  '/api/search/lyrics': typeof ApiSearchLyricsRoute
+  '/api/stalker/github': typeof ApiStalkerGithubRoute
   '/api/tools/qr': typeof ApiToolsQrRoute
   '/api/tools/shorten': typeof ApiToolsShortenRoute
   '/api/tools/ssweb': typeof ApiToolsSswebRoute
@@ -123,6 +172,13 @@ export interface FileRoutesByTo {
   '/api/ai/gemini': typeof ApiAiGeminiRoute
   '/api/ai/gpt4o': typeof ApiAiGpt4oRoute
   '/api/ai/imagine': typeof ApiAiImagineRoute
+  '/api/anime/quote': typeof ApiAnimeQuoteRoute
+  '/api/anime/waifu': typeof ApiAnimeWaifuRoute
+  '/api/fun/joke': typeof ApiFunJokeRoute
+  '/api/fun/meme': typeof ApiFunMemeRoute
+  '/api/search/google': typeof ApiSearchGoogleRoute
+  '/api/search/lyrics': typeof ApiSearchLyricsRoute
+  '/api/stalker/github': typeof ApiStalkerGithubRoute
   '/api/tools/qr': typeof ApiToolsQrRoute
   '/api/tools/shorten': typeof ApiToolsShortenRoute
   '/api/tools/ssweb': typeof ApiToolsSswebRoute
@@ -140,6 +196,13 @@ export interface FileRoutesById {
   '/api/ai/gemini': typeof ApiAiGeminiRoute
   '/api/ai/gpt4o': typeof ApiAiGpt4oRoute
   '/api/ai/imagine': typeof ApiAiImagineRoute
+  '/api/anime/quote': typeof ApiAnimeQuoteRoute
+  '/api/anime/waifu': typeof ApiAnimeWaifuRoute
+  '/api/fun/joke': typeof ApiFunJokeRoute
+  '/api/fun/meme': typeof ApiFunMemeRoute
+  '/api/search/google': typeof ApiSearchGoogleRoute
+  '/api/search/lyrics': typeof ApiSearchLyricsRoute
+  '/api/stalker/github': typeof ApiStalkerGithubRoute
   '/api/tools/qr': typeof ApiToolsQrRoute
   '/api/tools/shorten': typeof ApiToolsShortenRoute
   '/api/tools/ssweb': typeof ApiToolsSswebRoute
@@ -158,6 +221,13 @@ export interface FileRouteTypes {
     | '/api/ai/gemini'
     | '/api/ai/gpt4o'
     | '/api/ai/imagine'
+    | '/api/anime/quote'
+    | '/api/anime/waifu'
+    | '/api/fun/joke'
+    | '/api/fun/meme'
+    | '/api/search/google'
+    | '/api/search/lyrics'
+    | '/api/stalker/github'
     | '/api/tools/qr'
     | '/api/tools/shorten'
     | '/api/tools/ssweb'
@@ -174,6 +244,13 @@ export interface FileRouteTypes {
     | '/api/ai/gemini'
     | '/api/ai/gpt4o'
     | '/api/ai/imagine'
+    | '/api/anime/quote'
+    | '/api/anime/waifu'
+    | '/api/fun/joke'
+    | '/api/fun/meme'
+    | '/api/search/google'
+    | '/api/search/lyrics'
+    | '/api/stalker/github'
     | '/api/tools/qr'
     | '/api/tools/shorten'
     | '/api/tools/ssweb'
@@ -190,6 +267,13 @@ export interface FileRouteTypes {
     | '/api/ai/gemini'
     | '/api/ai/gpt4o'
     | '/api/ai/imagine'
+    | '/api/anime/quote'
+    | '/api/anime/waifu'
+    | '/api/fun/joke'
+    | '/api/fun/meme'
+    | '/api/search/google'
+    | '/api/search/lyrics'
+    | '/api/stalker/github'
     | '/api/tools/qr'
     | '/api/tools/shorten'
     | '/api/tools/ssweb'
@@ -206,6 +290,13 @@ export interface RootRouteChildren {
   ApiAiGeminiRoute: typeof ApiAiGeminiRoute
   ApiAiGpt4oRoute: typeof ApiAiGpt4oRoute
   ApiAiImagineRoute: typeof ApiAiImagineRoute
+  ApiAnimeQuoteRoute: typeof ApiAnimeQuoteRoute
+  ApiAnimeWaifuRoute: typeof ApiAnimeWaifuRoute
+  ApiFunJokeRoute: typeof ApiFunJokeRoute
+  ApiFunMemeRoute: typeof ApiFunMemeRoute
+  ApiSearchGoogleRoute: typeof ApiSearchGoogleRoute
+  ApiSearchLyricsRoute: typeof ApiSearchLyricsRoute
+  ApiStalkerGithubRoute: typeof ApiStalkerGithubRoute
   ApiToolsQrRoute: typeof ApiToolsQrRoute
   ApiToolsShortenRoute: typeof ApiToolsShortenRoute
   ApiToolsSswebRoute: typeof ApiToolsSswebRoute
@@ -276,6 +367,55 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiToolsQrRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/stalker/github': {
+      id: '/api/stalker/github'
+      path: '/api/stalker/github'
+      fullPath: '/api/stalker/github'
+      preLoaderRoute: typeof ApiStalkerGithubRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/search/lyrics': {
+      id: '/api/search/lyrics'
+      path: '/api/search/lyrics'
+      fullPath: '/api/search/lyrics'
+      preLoaderRoute: typeof ApiSearchLyricsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/search/google': {
+      id: '/api/search/google'
+      path: '/api/search/google'
+      fullPath: '/api/search/google'
+      preLoaderRoute: typeof ApiSearchGoogleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/fun/meme': {
+      id: '/api/fun/meme'
+      path: '/api/fun/meme'
+      fullPath: '/api/fun/meme'
+      preLoaderRoute: typeof ApiFunMemeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/fun/joke': {
+      id: '/api/fun/joke'
+      path: '/api/fun/joke'
+      fullPath: '/api/fun/joke'
+      preLoaderRoute: typeof ApiFunJokeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/anime/waifu': {
+      id: '/api/anime/waifu'
+      path: '/api/anime/waifu'
+      fullPath: '/api/anime/waifu'
+      preLoaderRoute: typeof ApiAnimeWaifuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/anime/quote': {
+      id: '/api/anime/quote'
+      path: '/api/anime/quote'
+      fullPath: '/api/anime/quote'
+      preLoaderRoute: typeof ApiAnimeQuoteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/ai/imagine': {
       id: '/api/ai/imagine'
       path: '/api/ai/imagine'
@@ -337,6 +477,13 @@ const rootRouteChildren: RootRouteChildren = {
   ApiAiGeminiRoute: ApiAiGeminiRoute,
   ApiAiGpt4oRoute: ApiAiGpt4oRoute,
   ApiAiImagineRoute: ApiAiImagineRoute,
+  ApiAnimeQuoteRoute: ApiAnimeQuoteRoute,
+  ApiAnimeWaifuRoute: ApiAnimeWaifuRoute,
+  ApiFunJokeRoute: ApiFunJokeRoute,
+  ApiFunMemeRoute: ApiFunMemeRoute,
+  ApiSearchGoogleRoute: ApiSearchGoogleRoute,
+  ApiSearchLyricsRoute: ApiSearchLyricsRoute,
+  ApiStalkerGithubRoute: ApiStalkerGithubRoute,
   ApiToolsQrRoute: ApiToolsQrRoute,
   ApiToolsShortenRoute: ApiToolsShortenRoute,
   ApiToolsSswebRoute: ApiToolsSswebRoute,
@@ -344,3 +491,12 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}
