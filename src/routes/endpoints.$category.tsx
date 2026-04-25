@@ -42,7 +42,7 @@ function CategoryPage() {
       </div>
 
       <div className="space-y-5">
-        {category.endpoints.map((ep) => (
+        {category.endpoints.map((ep: typeof category.endpoints[number]) => (
           <EndpointTester key={ep.path} endpoint={ep} />
         ))}
       </div>
