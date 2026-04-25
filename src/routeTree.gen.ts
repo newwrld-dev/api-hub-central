@@ -15,6 +15,32 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ChangelogRouteImport } from './routes/changelog'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as EndpointsCategoryRouteImport } from './routes/endpoints.$category'
+import { Route as ApiSplatRouteImport } from './routes/api.$'
+import { Route as ApiToolsSswebRouteImport } from './routes/api.tools.ssweb'
+import { Route as ApiToolsShortenRouteImport } from './routes/api.tools.shorten'
+import { Route as ApiToolsQrRouteImport } from './routes/api.tools.qr'
+import { Route as ApiStalkerGithubRouteImport } from './routes/api.stalker.github'
+import { Route as ApiSearchYoutubeRouteImport } from './routes/api.search.youtube'
+import { Route as ApiSearchLyricsRouteImport } from './routes/api.search.lyrics'
+import { Route as ApiSearchGoogleRouteImport } from './routes/api.search.google'
+import { Route as ApiFunMemeRouteImport } from './routes/api.fun.meme'
+import { Route as ApiFunJokeRouteImport } from './routes/api.fun.joke'
+import { Route as ApiDownloadYtmp4RouteImport } from './routes/api.download.ytmp4'
+import { Route as ApiDownloadYtmp3RouteImport } from './routes/api.download.ytmp3'
+import { Route as ApiDownloadTwitterRouteImport } from './routes/api.download.twitter'
+import { Route as ApiDownloadTiktokRouteImport } from './routes/api.download.tiktok'
+import { Route as ApiDownloadSpotifyRouteImport } from './routes/api.download.spotify'
+import { Route as ApiDownloadSoundcloudRouteImport } from './routes/api.download.soundcloud'
+import { Route as ApiDownloadPinterestRouteImport } from './routes/api.download.pinterest'
+import { Route as ApiDownloadInstagramRouteImport } from './routes/api.download.instagram'
+import { Route as ApiDownloadFacebookRouteImport } from './routes/api.download.facebook'
+import { Route as ApiAnimeWaifuRouteImport } from './routes/api.anime.waifu'
+import { Route as ApiAnimeQuoteRouteImport } from './routes/api.anime.quote'
+import { Route as ApiAiImagineRouteImport } from './routes/api.ai.imagine'
+import { Route as ApiAiGpt4oRouteImport } from './routes/api.ai.gpt4o'
+import { Route as ApiAiGeminiRouteImport } from './routes/api.ai.gemini'
+import { Route as ApiAiClaudeRouteImport } from './routes/api.ai.claude'
+import { Route as ApiAiAiRouteImport } from './routes/api.ai.ai'
 
 const EndpointsRoute = EndpointsRouteImport.update({
   id: '/endpoints',
@@ -46,6 +72,136 @@ const EndpointsCategoryRoute = EndpointsCategoryRouteImport.update({
   path: '/$category',
   getParentRoute: () => EndpointsRoute,
 } as any)
+const ApiSplatRoute = ApiSplatRouteImport.update({
+  id: '/api/$',
+  path: '/api/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiToolsSswebRoute = ApiToolsSswebRouteImport.update({
+  id: '/api/tools/ssweb',
+  path: '/api/tools/ssweb',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiToolsShortenRoute = ApiToolsShortenRouteImport.update({
+  id: '/api/tools/shorten',
+  path: '/api/tools/shorten',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiToolsQrRoute = ApiToolsQrRouteImport.update({
+  id: '/api/tools/qr',
+  path: '/api/tools/qr',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiStalkerGithubRoute = ApiStalkerGithubRouteImport.update({
+  id: '/api/stalker/github',
+  path: '/api/stalker/github',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiSearchYoutubeRoute = ApiSearchYoutubeRouteImport.update({
+  id: '/api/search/youtube',
+  path: '/api/search/youtube',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiSearchLyricsRoute = ApiSearchLyricsRouteImport.update({
+  id: '/api/search/lyrics',
+  path: '/api/search/lyrics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiSearchGoogleRoute = ApiSearchGoogleRouteImport.update({
+  id: '/api/search/google',
+  path: '/api/search/google',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiFunMemeRoute = ApiFunMemeRouteImport.update({
+  id: '/api/fun/meme',
+  path: '/api/fun/meme',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiFunJokeRoute = ApiFunJokeRouteImport.update({
+  id: '/api/fun/joke',
+  path: '/api/fun/joke',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiDownloadYtmp4Route = ApiDownloadYtmp4RouteImport.update({
+  id: '/api/download/ytmp4',
+  path: '/api/download/ytmp4',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiDownloadYtmp3Route = ApiDownloadYtmp3RouteImport.update({
+  id: '/api/download/ytmp3',
+  path: '/api/download/ytmp3',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiDownloadTwitterRoute = ApiDownloadTwitterRouteImport.update({
+  id: '/api/download/twitter',
+  path: '/api/download/twitter',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiDownloadTiktokRoute = ApiDownloadTiktokRouteImport.update({
+  id: '/api/download/tiktok',
+  path: '/api/download/tiktok',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiDownloadSpotifyRoute = ApiDownloadSpotifyRouteImport.update({
+  id: '/api/download/spotify',
+  path: '/api/download/spotify',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiDownloadSoundcloudRoute = ApiDownloadSoundcloudRouteImport.update({
+  id: '/api/download/soundcloud',
+  path: '/api/download/soundcloud',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiDownloadPinterestRoute = ApiDownloadPinterestRouteImport.update({
+  id: '/api/download/pinterest',
+  path: '/api/download/pinterest',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiDownloadInstagramRoute = ApiDownloadInstagramRouteImport.update({
+  id: '/api/download/instagram',
+  path: '/api/download/instagram',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiDownloadFacebookRoute = ApiDownloadFacebookRouteImport.update({
+  id: '/api/download/facebook',
+  path: '/api/download/facebook',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAnimeWaifuRoute = ApiAnimeWaifuRouteImport.update({
+  id: '/api/anime/waifu',
+  path: '/api/anime/waifu',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAnimeQuoteRoute = ApiAnimeQuoteRouteImport.update({
+  id: '/api/anime/quote',
+  path: '/api/anime/quote',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAiImagineRoute = ApiAiImagineRouteImport.update({
+  id: '/api/ai/imagine',
+  path: '/api/ai/imagine',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAiGpt4oRoute = ApiAiGpt4oRouteImport.update({
+  id: '/api/ai/gpt4o',
+  path: '/api/ai/gpt4o',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAiGeminiRoute = ApiAiGeminiRouteImport.update({
+  id: '/api/ai/gemini',
+  path: '/api/ai/gemini',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAiClaudeRoute = ApiAiClaudeRouteImport.update({
+  id: '/api/ai/claude',
+  path: '/api/ai/claude',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAiAiRoute = ApiAiAiRouteImport.update({
+  id: '/api/ai/ai',
+  path: '/api/ai/ai',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -53,7 +209,33 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/docs': typeof DocsRoute
   '/endpoints': typeof EndpointsRouteWithChildren
+  '/api/$': typeof ApiSplatRoute
   '/endpoints/$category': typeof EndpointsCategoryRoute
+  '/api/ai/ai': typeof ApiAiAiRoute
+  '/api/ai/claude': typeof ApiAiClaudeRoute
+  '/api/ai/gemini': typeof ApiAiGeminiRoute
+  '/api/ai/gpt4o': typeof ApiAiGpt4oRoute
+  '/api/ai/imagine': typeof ApiAiImagineRoute
+  '/api/anime/quote': typeof ApiAnimeQuoteRoute
+  '/api/anime/waifu': typeof ApiAnimeWaifuRoute
+  '/api/download/facebook': typeof ApiDownloadFacebookRoute
+  '/api/download/instagram': typeof ApiDownloadInstagramRoute
+  '/api/download/pinterest': typeof ApiDownloadPinterestRoute
+  '/api/download/soundcloud': typeof ApiDownloadSoundcloudRoute
+  '/api/download/spotify': typeof ApiDownloadSpotifyRoute
+  '/api/download/tiktok': typeof ApiDownloadTiktokRoute
+  '/api/download/twitter': typeof ApiDownloadTwitterRoute
+  '/api/download/ytmp3': typeof ApiDownloadYtmp3Route
+  '/api/download/ytmp4': typeof ApiDownloadYtmp4Route
+  '/api/fun/joke': typeof ApiFunJokeRoute
+  '/api/fun/meme': typeof ApiFunMemeRoute
+  '/api/search/google': typeof ApiSearchGoogleRoute
+  '/api/search/lyrics': typeof ApiSearchLyricsRoute
+  '/api/search/youtube': typeof ApiSearchYoutubeRoute
+  '/api/stalker/github': typeof ApiStalkerGithubRoute
+  '/api/tools/qr': typeof ApiToolsQrRoute
+  '/api/tools/shorten': typeof ApiToolsShortenRoute
+  '/api/tools/ssweb': typeof ApiToolsSswebRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -61,7 +243,33 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/docs': typeof DocsRoute
   '/endpoints': typeof EndpointsRouteWithChildren
+  '/api/$': typeof ApiSplatRoute
   '/endpoints/$category': typeof EndpointsCategoryRoute
+  '/api/ai/ai': typeof ApiAiAiRoute
+  '/api/ai/claude': typeof ApiAiClaudeRoute
+  '/api/ai/gemini': typeof ApiAiGeminiRoute
+  '/api/ai/gpt4o': typeof ApiAiGpt4oRoute
+  '/api/ai/imagine': typeof ApiAiImagineRoute
+  '/api/anime/quote': typeof ApiAnimeQuoteRoute
+  '/api/anime/waifu': typeof ApiAnimeWaifuRoute
+  '/api/download/facebook': typeof ApiDownloadFacebookRoute
+  '/api/download/instagram': typeof ApiDownloadInstagramRoute
+  '/api/download/pinterest': typeof ApiDownloadPinterestRoute
+  '/api/download/soundcloud': typeof ApiDownloadSoundcloudRoute
+  '/api/download/spotify': typeof ApiDownloadSpotifyRoute
+  '/api/download/tiktok': typeof ApiDownloadTiktokRoute
+  '/api/download/twitter': typeof ApiDownloadTwitterRoute
+  '/api/download/ytmp3': typeof ApiDownloadYtmp3Route
+  '/api/download/ytmp4': typeof ApiDownloadYtmp4Route
+  '/api/fun/joke': typeof ApiFunJokeRoute
+  '/api/fun/meme': typeof ApiFunMemeRoute
+  '/api/search/google': typeof ApiSearchGoogleRoute
+  '/api/search/lyrics': typeof ApiSearchLyricsRoute
+  '/api/search/youtube': typeof ApiSearchYoutubeRoute
+  '/api/stalker/github': typeof ApiStalkerGithubRoute
+  '/api/tools/qr': typeof ApiToolsQrRoute
+  '/api/tools/shorten': typeof ApiToolsShortenRoute
+  '/api/tools/ssweb': typeof ApiToolsSswebRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -70,7 +278,33 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/docs': typeof DocsRoute
   '/endpoints': typeof EndpointsRouteWithChildren
+  '/api/$': typeof ApiSplatRoute
   '/endpoints/$category': typeof EndpointsCategoryRoute
+  '/api/ai/ai': typeof ApiAiAiRoute
+  '/api/ai/claude': typeof ApiAiClaudeRoute
+  '/api/ai/gemini': typeof ApiAiGeminiRoute
+  '/api/ai/gpt4o': typeof ApiAiGpt4oRoute
+  '/api/ai/imagine': typeof ApiAiImagineRoute
+  '/api/anime/quote': typeof ApiAnimeQuoteRoute
+  '/api/anime/waifu': typeof ApiAnimeWaifuRoute
+  '/api/download/facebook': typeof ApiDownloadFacebookRoute
+  '/api/download/instagram': typeof ApiDownloadInstagramRoute
+  '/api/download/pinterest': typeof ApiDownloadPinterestRoute
+  '/api/download/soundcloud': typeof ApiDownloadSoundcloudRoute
+  '/api/download/spotify': typeof ApiDownloadSpotifyRoute
+  '/api/download/tiktok': typeof ApiDownloadTiktokRoute
+  '/api/download/twitter': typeof ApiDownloadTwitterRoute
+  '/api/download/ytmp3': typeof ApiDownloadYtmp3Route
+  '/api/download/ytmp4': typeof ApiDownloadYtmp4Route
+  '/api/fun/joke': typeof ApiFunJokeRoute
+  '/api/fun/meme': typeof ApiFunMemeRoute
+  '/api/search/google': typeof ApiSearchGoogleRoute
+  '/api/search/lyrics': typeof ApiSearchLyricsRoute
+  '/api/search/youtube': typeof ApiSearchYoutubeRoute
+  '/api/stalker/github': typeof ApiStalkerGithubRoute
+  '/api/tools/qr': typeof ApiToolsQrRoute
+  '/api/tools/shorten': typeof ApiToolsShortenRoute
+  '/api/tools/ssweb': typeof ApiToolsSswebRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -80,7 +314,33 @@ export interface FileRouteTypes {
     | '/contact'
     | '/docs'
     | '/endpoints'
+    | '/api/$'
     | '/endpoints/$category'
+    | '/api/ai/ai'
+    | '/api/ai/claude'
+    | '/api/ai/gemini'
+    | '/api/ai/gpt4o'
+    | '/api/ai/imagine'
+    | '/api/anime/quote'
+    | '/api/anime/waifu'
+    | '/api/download/facebook'
+    | '/api/download/instagram'
+    | '/api/download/pinterest'
+    | '/api/download/soundcloud'
+    | '/api/download/spotify'
+    | '/api/download/tiktok'
+    | '/api/download/twitter'
+    | '/api/download/ytmp3'
+    | '/api/download/ytmp4'
+    | '/api/fun/joke'
+    | '/api/fun/meme'
+    | '/api/search/google'
+    | '/api/search/lyrics'
+    | '/api/search/youtube'
+    | '/api/stalker/github'
+    | '/api/tools/qr'
+    | '/api/tools/shorten'
+    | '/api/tools/ssweb'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -88,7 +348,33 @@ export interface FileRouteTypes {
     | '/contact'
     | '/docs'
     | '/endpoints'
+    | '/api/$'
     | '/endpoints/$category'
+    | '/api/ai/ai'
+    | '/api/ai/claude'
+    | '/api/ai/gemini'
+    | '/api/ai/gpt4o'
+    | '/api/ai/imagine'
+    | '/api/anime/quote'
+    | '/api/anime/waifu'
+    | '/api/download/facebook'
+    | '/api/download/instagram'
+    | '/api/download/pinterest'
+    | '/api/download/soundcloud'
+    | '/api/download/spotify'
+    | '/api/download/tiktok'
+    | '/api/download/twitter'
+    | '/api/download/ytmp3'
+    | '/api/download/ytmp4'
+    | '/api/fun/joke'
+    | '/api/fun/meme'
+    | '/api/search/google'
+    | '/api/search/lyrics'
+    | '/api/search/youtube'
+    | '/api/stalker/github'
+    | '/api/tools/qr'
+    | '/api/tools/shorten'
+    | '/api/tools/ssweb'
   id:
     | '__root__'
     | '/'
@@ -96,7 +382,33 @@ export interface FileRouteTypes {
     | '/contact'
     | '/docs'
     | '/endpoints'
+    | '/api/$'
     | '/endpoints/$category'
+    | '/api/ai/ai'
+    | '/api/ai/claude'
+    | '/api/ai/gemini'
+    | '/api/ai/gpt4o'
+    | '/api/ai/imagine'
+    | '/api/anime/quote'
+    | '/api/anime/waifu'
+    | '/api/download/facebook'
+    | '/api/download/instagram'
+    | '/api/download/pinterest'
+    | '/api/download/soundcloud'
+    | '/api/download/spotify'
+    | '/api/download/tiktok'
+    | '/api/download/twitter'
+    | '/api/download/ytmp3'
+    | '/api/download/ytmp4'
+    | '/api/fun/joke'
+    | '/api/fun/meme'
+    | '/api/search/google'
+    | '/api/search/lyrics'
+    | '/api/search/youtube'
+    | '/api/stalker/github'
+    | '/api/tools/qr'
+    | '/api/tools/shorten'
+    | '/api/tools/ssweb'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -105,6 +417,32 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   DocsRoute: typeof DocsRoute
   EndpointsRoute: typeof EndpointsRouteWithChildren
+  ApiSplatRoute: typeof ApiSplatRoute
+  ApiAiAiRoute: typeof ApiAiAiRoute
+  ApiAiClaudeRoute: typeof ApiAiClaudeRoute
+  ApiAiGeminiRoute: typeof ApiAiGeminiRoute
+  ApiAiGpt4oRoute: typeof ApiAiGpt4oRoute
+  ApiAiImagineRoute: typeof ApiAiImagineRoute
+  ApiAnimeQuoteRoute: typeof ApiAnimeQuoteRoute
+  ApiAnimeWaifuRoute: typeof ApiAnimeWaifuRoute
+  ApiDownloadFacebookRoute: typeof ApiDownloadFacebookRoute
+  ApiDownloadInstagramRoute: typeof ApiDownloadInstagramRoute
+  ApiDownloadPinterestRoute: typeof ApiDownloadPinterestRoute
+  ApiDownloadSoundcloudRoute: typeof ApiDownloadSoundcloudRoute
+  ApiDownloadSpotifyRoute: typeof ApiDownloadSpotifyRoute
+  ApiDownloadTiktokRoute: typeof ApiDownloadTiktokRoute
+  ApiDownloadTwitterRoute: typeof ApiDownloadTwitterRoute
+  ApiDownloadYtmp3Route: typeof ApiDownloadYtmp3Route
+  ApiDownloadYtmp4Route: typeof ApiDownloadYtmp4Route
+  ApiFunJokeRoute: typeof ApiFunJokeRoute
+  ApiFunMemeRoute: typeof ApiFunMemeRoute
+  ApiSearchGoogleRoute: typeof ApiSearchGoogleRoute
+  ApiSearchLyricsRoute: typeof ApiSearchLyricsRoute
+  ApiSearchYoutubeRoute: typeof ApiSearchYoutubeRoute
+  ApiStalkerGithubRoute: typeof ApiStalkerGithubRoute
+  ApiToolsQrRoute: typeof ApiToolsQrRoute
+  ApiToolsShortenRoute: typeof ApiToolsShortenRoute
+  ApiToolsSswebRoute: typeof ApiToolsSswebRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -151,6 +489,188 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EndpointsCategoryRouteImport
       parentRoute: typeof EndpointsRoute
     }
+    '/api/$': {
+      id: '/api/$'
+      path: '/api/$'
+      fullPath: '/api/$'
+      preLoaderRoute: typeof ApiSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/tools/ssweb': {
+      id: '/api/tools/ssweb'
+      path: '/api/tools/ssweb'
+      fullPath: '/api/tools/ssweb'
+      preLoaderRoute: typeof ApiToolsSswebRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/tools/shorten': {
+      id: '/api/tools/shorten'
+      path: '/api/tools/shorten'
+      fullPath: '/api/tools/shorten'
+      preLoaderRoute: typeof ApiToolsShortenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/tools/qr': {
+      id: '/api/tools/qr'
+      path: '/api/tools/qr'
+      fullPath: '/api/tools/qr'
+      preLoaderRoute: typeof ApiToolsQrRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/stalker/github': {
+      id: '/api/stalker/github'
+      path: '/api/stalker/github'
+      fullPath: '/api/stalker/github'
+      preLoaderRoute: typeof ApiStalkerGithubRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/search/youtube': {
+      id: '/api/search/youtube'
+      path: '/api/search/youtube'
+      fullPath: '/api/search/youtube'
+      preLoaderRoute: typeof ApiSearchYoutubeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/search/lyrics': {
+      id: '/api/search/lyrics'
+      path: '/api/search/lyrics'
+      fullPath: '/api/search/lyrics'
+      preLoaderRoute: typeof ApiSearchLyricsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/search/google': {
+      id: '/api/search/google'
+      path: '/api/search/google'
+      fullPath: '/api/search/google'
+      preLoaderRoute: typeof ApiSearchGoogleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/fun/meme': {
+      id: '/api/fun/meme'
+      path: '/api/fun/meme'
+      fullPath: '/api/fun/meme'
+      preLoaderRoute: typeof ApiFunMemeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/fun/joke': {
+      id: '/api/fun/joke'
+      path: '/api/fun/joke'
+      fullPath: '/api/fun/joke'
+      preLoaderRoute: typeof ApiFunJokeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/download/ytmp4': {
+      id: '/api/download/ytmp4'
+      path: '/api/download/ytmp4'
+      fullPath: '/api/download/ytmp4'
+      preLoaderRoute: typeof ApiDownloadYtmp4RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/download/ytmp3': {
+      id: '/api/download/ytmp3'
+      path: '/api/download/ytmp3'
+      fullPath: '/api/download/ytmp3'
+      preLoaderRoute: typeof ApiDownloadYtmp3RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/download/twitter': {
+      id: '/api/download/twitter'
+      path: '/api/download/twitter'
+      fullPath: '/api/download/twitter'
+      preLoaderRoute: typeof ApiDownloadTwitterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/download/tiktok': {
+      id: '/api/download/tiktok'
+      path: '/api/download/tiktok'
+      fullPath: '/api/download/tiktok'
+      preLoaderRoute: typeof ApiDownloadTiktokRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/download/spotify': {
+      id: '/api/download/spotify'
+      path: '/api/download/spotify'
+      fullPath: '/api/download/spotify'
+      preLoaderRoute: typeof ApiDownloadSpotifyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/download/soundcloud': {
+      id: '/api/download/soundcloud'
+      path: '/api/download/soundcloud'
+      fullPath: '/api/download/soundcloud'
+      preLoaderRoute: typeof ApiDownloadSoundcloudRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/download/pinterest': {
+      id: '/api/download/pinterest'
+      path: '/api/download/pinterest'
+      fullPath: '/api/download/pinterest'
+      preLoaderRoute: typeof ApiDownloadPinterestRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/download/instagram': {
+      id: '/api/download/instagram'
+      path: '/api/download/instagram'
+      fullPath: '/api/download/instagram'
+      preLoaderRoute: typeof ApiDownloadInstagramRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/download/facebook': {
+      id: '/api/download/facebook'
+      path: '/api/download/facebook'
+      fullPath: '/api/download/facebook'
+      preLoaderRoute: typeof ApiDownloadFacebookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/anime/waifu': {
+      id: '/api/anime/waifu'
+      path: '/api/anime/waifu'
+      fullPath: '/api/anime/waifu'
+      preLoaderRoute: typeof ApiAnimeWaifuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/anime/quote': {
+      id: '/api/anime/quote'
+      path: '/api/anime/quote'
+      fullPath: '/api/anime/quote'
+      preLoaderRoute: typeof ApiAnimeQuoteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/ai/imagine': {
+      id: '/api/ai/imagine'
+      path: '/api/ai/imagine'
+      fullPath: '/api/ai/imagine'
+      preLoaderRoute: typeof ApiAiImagineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/ai/gpt4o': {
+      id: '/api/ai/gpt4o'
+      path: '/api/ai/gpt4o'
+      fullPath: '/api/ai/gpt4o'
+      preLoaderRoute: typeof ApiAiGpt4oRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/ai/gemini': {
+      id: '/api/ai/gemini'
+      path: '/api/ai/gemini'
+      fullPath: '/api/ai/gemini'
+      preLoaderRoute: typeof ApiAiGeminiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/ai/claude': {
+      id: '/api/ai/claude'
+      path: '/api/ai/claude'
+      fullPath: '/api/ai/claude'
+      preLoaderRoute: typeof ApiAiClaudeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/ai/ai': {
+      id: '/api/ai/ai'
+      path: '/api/ai/ai'
+      fullPath: '/api/ai/ai'
+      preLoaderRoute: typeof ApiAiAiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -172,16 +692,33 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   DocsRoute: DocsRoute,
   EndpointsRoute: EndpointsRouteWithChildren,
+  ApiSplatRoute: ApiSplatRoute,
+  ApiAiAiRoute: ApiAiAiRoute,
+  ApiAiClaudeRoute: ApiAiClaudeRoute,
+  ApiAiGeminiRoute: ApiAiGeminiRoute,
+  ApiAiGpt4oRoute: ApiAiGpt4oRoute,
+  ApiAiImagineRoute: ApiAiImagineRoute,
+  ApiAnimeQuoteRoute: ApiAnimeQuoteRoute,
+  ApiAnimeWaifuRoute: ApiAnimeWaifuRoute,
+  ApiDownloadFacebookRoute: ApiDownloadFacebookRoute,
+  ApiDownloadInstagramRoute: ApiDownloadInstagramRoute,
+  ApiDownloadPinterestRoute: ApiDownloadPinterestRoute,
+  ApiDownloadSoundcloudRoute: ApiDownloadSoundcloudRoute,
+  ApiDownloadSpotifyRoute: ApiDownloadSpotifyRoute,
+  ApiDownloadTiktokRoute: ApiDownloadTiktokRoute,
+  ApiDownloadTwitterRoute: ApiDownloadTwitterRoute,
+  ApiDownloadYtmp3Route: ApiDownloadYtmp3Route,
+  ApiDownloadYtmp4Route: ApiDownloadYtmp4Route,
+  ApiFunJokeRoute: ApiFunJokeRoute,
+  ApiFunMemeRoute: ApiFunMemeRoute,
+  ApiSearchGoogleRoute: ApiSearchGoogleRoute,
+  ApiSearchLyricsRoute: ApiSearchLyricsRoute,
+  ApiSearchYoutubeRoute: ApiSearchYoutubeRoute,
+  ApiStalkerGithubRoute: ApiStalkerGithubRoute,
+  ApiToolsQrRoute: ApiToolsQrRoute,
+  ApiToolsShortenRoute: ApiToolsShortenRoute,
+  ApiToolsSswebRoute: ApiToolsSswebRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
-}
