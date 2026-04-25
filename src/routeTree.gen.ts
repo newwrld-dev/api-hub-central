@@ -15,10 +15,12 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ChangelogRouteImport } from './routes/changelog'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as EndpointsCategoryRouteImport } from './routes/endpoints.$category'
+import { Route as ApiSplatRouteImport } from './routes/api.$'
 import { Route as ApiToolsSswebRouteImport } from './routes/api.tools.ssweb'
 import { Route as ApiToolsShortenRouteImport } from './routes/api.tools.shorten'
 import { Route as ApiToolsQrRouteImport } from './routes/api.tools.qr'
 import { Route as ApiStalkerGithubRouteImport } from './routes/api.stalker.github'
+import { Route as ApiSearchYoutubeRouteImport } from './routes/api.search.youtube'
 import { Route as ApiSearchLyricsRouteImport } from './routes/api.search.lyrics'
 import { Route as ApiSearchGoogleRouteImport } from './routes/api.search.google'
 import { Route as ApiFunMemeRouteImport } from './routes/api.fun.meme'
@@ -70,6 +72,11 @@ const EndpointsCategoryRoute = EndpointsCategoryRouteImport.update({
   path: '/$category',
   getParentRoute: () => EndpointsRoute,
 } as any)
+const ApiSplatRoute = ApiSplatRouteImport.update({
+  id: '/api/$',
+  path: '/api/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiToolsSswebRoute = ApiToolsSswebRouteImport.update({
   id: '/api/tools/ssweb',
   path: '/api/tools/ssweb',
@@ -88,6 +95,11 @@ const ApiToolsQrRoute = ApiToolsQrRouteImport.update({
 const ApiStalkerGithubRoute = ApiStalkerGithubRouteImport.update({
   id: '/api/stalker/github',
   path: '/api/stalker/github',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiSearchYoutubeRoute = ApiSearchYoutubeRouteImport.update({
+  id: '/api/search/youtube',
+  path: '/api/search/youtube',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiSearchLyricsRoute = ApiSearchLyricsRouteImport.update({
@@ -197,6 +209,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/docs': typeof DocsRoute
   '/endpoints': typeof EndpointsRouteWithChildren
+  '/api/$': typeof ApiSplatRoute
   '/endpoints/$category': typeof EndpointsCategoryRoute
   '/api/ai/ai': typeof ApiAiAiRoute
   '/api/ai/claude': typeof ApiAiClaudeRoute
@@ -218,6 +231,7 @@ export interface FileRoutesByFullPath {
   '/api/fun/meme': typeof ApiFunMemeRoute
   '/api/search/google': typeof ApiSearchGoogleRoute
   '/api/search/lyrics': typeof ApiSearchLyricsRoute
+  '/api/search/youtube': typeof ApiSearchYoutubeRoute
   '/api/stalker/github': typeof ApiStalkerGithubRoute
   '/api/tools/qr': typeof ApiToolsQrRoute
   '/api/tools/shorten': typeof ApiToolsShortenRoute
@@ -229,6 +243,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/docs': typeof DocsRoute
   '/endpoints': typeof EndpointsRouteWithChildren
+  '/api/$': typeof ApiSplatRoute
   '/endpoints/$category': typeof EndpointsCategoryRoute
   '/api/ai/ai': typeof ApiAiAiRoute
   '/api/ai/claude': typeof ApiAiClaudeRoute
@@ -250,6 +265,7 @@ export interface FileRoutesByTo {
   '/api/fun/meme': typeof ApiFunMemeRoute
   '/api/search/google': typeof ApiSearchGoogleRoute
   '/api/search/lyrics': typeof ApiSearchLyricsRoute
+  '/api/search/youtube': typeof ApiSearchYoutubeRoute
   '/api/stalker/github': typeof ApiStalkerGithubRoute
   '/api/tools/qr': typeof ApiToolsQrRoute
   '/api/tools/shorten': typeof ApiToolsShortenRoute
@@ -262,6 +278,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/docs': typeof DocsRoute
   '/endpoints': typeof EndpointsRouteWithChildren
+  '/api/$': typeof ApiSplatRoute
   '/endpoints/$category': typeof EndpointsCategoryRoute
   '/api/ai/ai': typeof ApiAiAiRoute
   '/api/ai/claude': typeof ApiAiClaudeRoute
@@ -283,6 +300,7 @@ export interface FileRoutesById {
   '/api/fun/meme': typeof ApiFunMemeRoute
   '/api/search/google': typeof ApiSearchGoogleRoute
   '/api/search/lyrics': typeof ApiSearchLyricsRoute
+  '/api/search/youtube': typeof ApiSearchYoutubeRoute
   '/api/stalker/github': typeof ApiStalkerGithubRoute
   '/api/tools/qr': typeof ApiToolsQrRoute
   '/api/tools/shorten': typeof ApiToolsShortenRoute
@@ -296,6 +314,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/docs'
     | '/endpoints'
+    | '/api/$'
     | '/endpoints/$category'
     | '/api/ai/ai'
     | '/api/ai/claude'
@@ -317,6 +336,7 @@ export interface FileRouteTypes {
     | '/api/fun/meme'
     | '/api/search/google'
     | '/api/search/lyrics'
+    | '/api/search/youtube'
     | '/api/stalker/github'
     | '/api/tools/qr'
     | '/api/tools/shorten'
@@ -328,6 +348,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/docs'
     | '/endpoints'
+    | '/api/$'
     | '/endpoints/$category'
     | '/api/ai/ai'
     | '/api/ai/claude'
@@ -349,6 +370,7 @@ export interface FileRouteTypes {
     | '/api/fun/meme'
     | '/api/search/google'
     | '/api/search/lyrics'
+    | '/api/search/youtube'
     | '/api/stalker/github'
     | '/api/tools/qr'
     | '/api/tools/shorten'
@@ -360,6 +382,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/docs'
     | '/endpoints'
+    | '/api/$'
     | '/endpoints/$category'
     | '/api/ai/ai'
     | '/api/ai/claude'
@@ -381,6 +404,7 @@ export interface FileRouteTypes {
     | '/api/fun/meme'
     | '/api/search/google'
     | '/api/search/lyrics'
+    | '/api/search/youtube'
     | '/api/stalker/github'
     | '/api/tools/qr'
     | '/api/tools/shorten'
@@ -393,6 +417,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   DocsRoute: typeof DocsRoute
   EndpointsRoute: typeof EndpointsRouteWithChildren
+  ApiSplatRoute: typeof ApiSplatRoute
   ApiAiAiRoute: typeof ApiAiAiRoute
   ApiAiClaudeRoute: typeof ApiAiClaudeRoute
   ApiAiGeminiRoute: typeof ApiAiGeminiRoute
@@ -413,6 +438,7 @@ export interface RootRouteChildren {
   ApiFunMemeRoute: typeof ApiFunMemeRoute
   ApiSearchGoogleRoute: typeof ApiSearchGoogleRoute
   ApiSearchLyricsRoute: typeof ApiSearchLyricsRoute
+  ApiSearchYoutubeRoute: typeof ApiSearchYoutubeRoute
   ApiStalkerGithubRoute: typeof ApiStalkerGithubRoute
   ApiToolsQrRoute: typeof ApiToolsQrRoute
   ApiToolsShortenRoute: typeof ApiToolsShortenRoute
@@ -463,6 +489,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EndpointsCategoryRouteImport
       parentRoute: typeof EndpointsRoute
     }
+    '/api/$': {
+      id: '/api/$'
+      path: '/api/$'
+      fullPath: '/api/$'
+      preLoaderRoute: typeof ApiSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/tools/ssweb': {
       id: '/api/tools/ssweb'
       path: '/api/tools/ssweb'
@@ -489,6 +522,13 @@ declare module '@tanstack/react-router' {
       path: '/api/stalker/github'
       fullPath: '/api/stalker/github'
       preLoaderRoute: typeof ApiStalkerGithubRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/search/youtube': {
+      id: '/api/search/youtube'
+      path: '/api/search/youtube'
+      fullPath: '/api/search/youtube'
+      preLoaderRoute: typeof ApiSearchYoutubeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/search/lyrics': {
@@ -652,6 +692,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   DocsRoute: DocsRoute,
   EndpointsRoute: EndpointsRouteWithChildren,
+  ApiSplatRoute: ApiSplatRoute,
   ApiAiAiRoute: ApiAiAiRoute,
   ApiAiClaudeRoute: ApiAiClaudeRoute,
   ApiAiGeminiRoute: ApiAiGeminiRoute,
@@ -672,6 +713,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiFunMemeRoute: ApiFunMemeRoute,
   ApiSearchGoogleRoute: ApiSearchGoogleRoute,
   ApiSearchLyricsRoute: ApiSearchLyricsRoute,
+  ApiSearchYoutubeRoute: ApiSearchYoutubeRoute,
   ApiStalkerGithubRoute: ApiStalkerGithubRoute,
   ApiToolsQrRoute: ApiToolsQrRoute,
   ApiToolsShortenRoute: ApiToolsShortenRoute,
