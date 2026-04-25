@@ -15,6 +15,14 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ChangelogRouteImport } from './routes/changelog'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as EndpointsCategoryRouteImport } from './routes/endpoints.$category'
+import { Route as ApiToolsSswebRouteImport } from './routes/api.tools.ssweb'
+import { Route as ApiToolsShortenRouteImport } from './routes/api.tools.shorten'
+import { Route as ApiToolsQrRouteImport } from './routes/api.tools.qr'
+import { Route as ApiAiImagineRouteImport } from './routes/api.ai.imagine'
+import { Route as ApiAiGpt4oRouteImport } from './routes/api.ai.gpt4o'
+import { Route as ApiAiGeminiRouteImport } from './routes/api.ai.gemini'
+import { Route as ApiAiClaudeRouteImport } from './routes/api.ai.claude'
+import { Route as ApiAiAiRouteImport } from './routes/api.ai.ai'
 
 const EndpointsRoute = EndpointsRouteImport.update({
   id: '/endpoints',
@@ -46,6 +54,46 @@ const EndpointsCategoryRoute = EndpointsCategoryRouteImport.update({
   path: '/$category',
   getParentRoute: () => EndpointsRoute,
 } as any)
+const ApiToolsSswebRoute = ApiToolsSswebRouteImport.update({
+  id: '/api/tools/ssweb',
+  path: '/api/tools/ssweb',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiToolsShortenRoute = ApiToolsShortenRouteImport.update({
+  id: '/api/tools/shorten',
+  path: '/api/tools/shorten',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiToolsQrRoute = ApiToolsQrRouteImport.update({
+  id: '/api/tools/qr',
+  path: '/api/tools/qr',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAiImagineRoute = ApiAiImagineRouteImport.update({
+  id: '/api/ai/imagine',
+  path: '/api/ai/imagine',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAiGpt4oRoute = ApiAiGpt4oRouteImport.update({
+  id: '/api/ai/gpt4o',
+  path: '/api/ai/gpt4o',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAiGeminiRoute = ApiAiGeminiRouteImport.update({
+  id: '/api/ai/gemini',
+  path: '/api/ai/gemini',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAiClaudeRoute = ApiAiClaudeRouteImport.update({
+  id: '/api/ai/claude',
+  path: '/api/ai/claude',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAiAiRoute = ApiAiAiRouteImport.update({
+  id: '/api/ai/ai',
+  path: '/api/ai/ai',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -54,6 +102,14 @@ export interface FileRoutesByFullPath {
   '/docs': typeof DocsRoute
   '/endpoints': typeof EndpointsRouteWithChildren
   '/endpoints/$category': typeof EndpointsCategoryRoute
+  '/api/ai/ai': typeof ApiAiAiRoute
+  '/api/ai/claude': typeof ApiAiClaudeRoute
+  '/api/ai/gemini': typeof ApiAiGeminiRoute
+  '/api/ai/gpt4o': typeof ApiAiGpt4oRoute
+  '/api/ai/imagine': typeof ApiAiImagineRoute
+  '/api/tools/qr': typeof ApiToolsQrRoute
+  '/api/tools/shorten': typeof ApiToolsShortenRoute
+  '/api/tools/ssweb': typeof ApiToolsSswebRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +118,14 @@ export interface FileRoutesByTo {
   '/docs': typeof DocsRoute
   '/endpoints': typeof EndpointsRouteWithChildren
   '/endpoints/$category': typeof EndpointsCategoryRoute
+  '/api/ai/ai': typeof ApiAiAiRoute
+  '/api/ai/claude': typeof ApiAiClaudeRoute
+  '/api/ai/gemini': typeof ApiAiGeminiRoute
+  '/api/ai/gpt4o': typeof ApiAiGpt4oRoute
+  '/api/ai/imagine': typeof ApiAiImagineRoute
+  '/api/tools/qr': typeof ApiToolsQrRoute
+  '/api/tools/shorten': typeof ApiToolsShortenRoute
+  '/api/tools/ssweb': typeof ApiToolsSswebRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,6 +135,14 @@ export interface FileRoutesById {
   '/docs': typeof DocsRoute
   '/endpoints': typeof EndpointsRouteWithChildren
   '/endpoints/$category': typeof EndpointsCategoryRoute
+  '/api/ai/ai': typeof ApiAiAiRoute
+  '/api/ai/claude': typeof ApiAiClaudeRoute
+  '/api/ai/gemini': typeof ApiAiGeminiRoute
+  '/api/ai/gpt4o': typeof ApiAiGpt4oRoute
+  '/api/ai/imagine': typeof ApiAiImagineRoute
+  '/api/tools/qr': typeof ApiToolsQrRoute
+  '/api/tools/shorten': typeof ApiToolsShortenRoute
+  '/api/tools/ssweb': typeof ApiToolsSswebRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -81,6 +153,14 @@ export interface FileRouteTypes {
     | '/docs'
     | '/endpoints'
     | '/endpoints/$category'
+    | '/api/ai/ai'
+    | '/api/ai/claude'
+    | '/api/ai/gemini'
+    | '/api/ai/gpt4o'
+    | '/api/ai/imagine'
+    | '/api/tools/qr'
+    | '/api/tools/shorten'
+    | '/api/tools/ssweb'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -89,6 +169,14 @@ export interface FileRouteTypes {
     | '/docs'
     | '/endpoints'
     | '/endpoints/$category'
+    | '/api/ai/ai'
+    | '/api/ai/claude'
+    | '/api/ai/gemini'
+    | '/api/ai/gpt4o'
+    | '/api/ai/imagine'
+    | '/api/tools/qr'
+    | '/api/tools/shorten'
+    | '/api/tools/ssweb'
   id:
     | '__root__'
     | '/'
@@ -97,6 +185,14 @@ export interface FileRouteTypes {
     | '/docs'
     | '/endpoints'
     | '/endpoints/$category'
+    | '/api/ai/ai'
+    | '/api/ai/claude'
+    | '/api/ai/gemini'
+    | '/api/ai/gpt4o'
+    | '/api/ai/imagine'
+    | '/api/tools/qr'
+    | '/api/tools/shorten'
+    | '/api/tools/ssweb'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -105,6 +201,14 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   DocsRoute: typeof DocsRoute
   EndpointsRoute: typeof EndpointsRouteWithChildren
+  ApiAiAiRoute: typeof ApiAiAiRoute
+  ApiAiClaudeRoute: typeof ApiAiClaudeRoute
+  ApiAiGeminiRoute: typeof ApiAiGeminiRoute
+  ApiAiGpt4oRoute: typeof ApiAiGpt4oRoute
+  ApiAiImagineRoute: typeof ApiAiImagineRoute
+  ApiToolsQrRoute: typeof ApiToolsQrRoute
+  ApiToolsShortenRoute: typeof ApiToolsShortenRoute
+  ApiToolsSswebRoute: typeof ApiToolsSswebRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -151,6 +255,62 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EndpointsCategoryRouteImport
       parentRoute: typeof EndpointsRoute
     }
+    '/api/tools/ssweb': {
+      id: '/api/tools/ssweb'
+      path: '/api/tools/ssweb'
+      fullPath: '/api/tools/ssweb'
+      preLoaderRoute: typeof ApiToolsSswebRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/tools/shorten': {
+      id: '/api/tools/shorten'
+      path: '/api/tools/shorten'
+      fullPath: '/api/tools/shorten'
+      preLoaderRoute: typeof ApiToolsShortenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/tools/qr': {
+      id: '/api/tools/qr'
+      path: '/api/tools/qr'
+      fullPath: '/api/tools/qr'
+      preLoaderRoute: typeof ApiToolsQrRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/ai/imagine': {
+      id: '/api/ai/imagine'
+      path: '/api/ai/imagine'
+      fullPath: '/api/ai/imagine'
+      preLoaderRoute: typeof ApiAiImagineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/ai/gpt4o': {
+      id: '/api/ai/gpt4o'
+      path: '/api/ai/gpt4o'
+      fullPath: '/api/ai/gpt4o'
+      preLoaderRoute: typeof ApiAiGpt4oRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/ai/gemini': {
+      id: '/api/ai/gemini'
+      path: '/api/ai/gemini'
+      fullPath: '/api/ai/gemini'
+      preLoaderRoute: typeof ApiAiGeminiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/ai/claude': {
+      id: '/api/ai/claude'
+      path: '/api/ai/claude'
+      fullPath: '/api/ai/claude'
+      preLoaderRoute: typeof ApiAiClaudeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/ai/ai': {
+      id: '/api/ai/ai'
+      path: '/api/ai/ai'
+      fullPath: '/api/ai/ai'
+      preLoaderRoute: typeof ApiAiAiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -172,6 +332,14 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   DocsRoute: DocsRoute,
   EndpointsRoute: EndpointsRouteWithChildren,
+  ApiAiAiRoute: ApiAiAiRoute,
+  ApiAiClaudeRoute: ApiAiClaudeRoute,
+  ApiAiGeminiRoute: ApiAiGeminiRoute,
+  ApiAiGpt4oRoute: ApiAiGpt4oRoute,
+  ApiAiImagineRoute: ApiAiImagineRoute,
+  ApiToolsQrRoute: ApiToolsQrRoute,
+  ApiToolsShortenRoute: ApiToolsShortenRoute,
+  ApiToolsSswebRoute: ApiToolsSswebRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
