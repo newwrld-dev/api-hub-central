@@ -15,6 +15,7 @@ const PORT = process.env.PORT || 10000;
 
 // ---------- Load all api.*.ts route handlers via tsx ----------
 // We use tsx (TypeScript loader) so we can import .ts files at runtime.
+// tsx auto-reads tsconfig.json `paths` so `@/lib/...` aliases resolve correctly.
 import { register } from "tsx/esm/api";
 register();
 
