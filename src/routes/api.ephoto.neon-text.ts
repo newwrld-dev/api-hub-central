@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { handleOptions, requireApiKey, requireParam, errorResponse, corsHeaders } from "@/lib/api/helpers";
+import { handleOptions, requireApiKey, requireParam, corsHeaders } from "@/lib/api/helpers";
 
 /** Generate a stylized text image via free img.shields.io / dummyimage placeholders.
  *  We don't depend on Ephoto360 (which requires browser automation).
@@ -58,4 +58,4 @@ export const Route = createFileRoute("/api/ephoto/neon-text")({
   },
 });
 
-export { neonSvg, errorResponse };
+export { neonSvg };
