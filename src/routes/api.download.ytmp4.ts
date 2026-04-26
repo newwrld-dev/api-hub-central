@@ -6,7 +6,7 @@ export const Route = createFileRoute("/api/download/ytmp4")({
   server: {
     handlers: {
       OPTIONS: async () => handleOptions(),
-      GET: downloaderHandler({ vQuality: "720" }),
+      GET: downloaderHandler({ platform: "youtube" }),
     },
   },
 });

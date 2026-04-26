@@ -6,7 +6,7 @@ export const Route = createFileRoute("/api/download/ytmp3")({
   server: {
     handlers: {
       OPTIONS: async () => handleOptions(),
-      GET: downloaderHandler({ isAudioOnly: true }),
+      GET: downloaderHandler({ isAudioOnly: true, platform: "youtube" }),
     },
   },
 });
