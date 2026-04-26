@@ -1,7 +1,65 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { errorResponse, handleOptions, requireApiKey, requireParam, corsHeaders } from "@/lib/api/helpers";
 
-interface YtSearchItem { title: string; videoId: string; author?: { name: string }; lengthSeconds?: number; viewCount?: number; thumbnail?: { thumbnails?: { url: string }[] } }
+const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Popkid/1.0";
+
+interface YtItem {
+  title: string;
+  url: string;
+  videoId: string;
+  thumbnail: string;
+  channel?: string;
+  duration?: string;
+  views?: string;
+  published?: string;
+}
+
+/** Scrape YouTube search results page (no API key). */
+async function scrapeYoutubeSearch(query: string): Promise<YtItem[]> {
+  const html = await fetch(`https://www.youtube.com/results?search_query=${encodeURIComponent(query)}&hl=en`, {
+    headers: { "User-Agent": UA, "Accept-Language": "en-US,en;q=0.9" },
+  }).then((r) => r.text());
+
+  // Extract ytInitialData JSON
+  const m = /var ytInitialData = (\{.*?\});<\/script>/s.exec(html);
+  if (!m) return [];
+  let data: unknown;
+  try { data = JSON.parse(m[1]); } catch { return []; }
+
+  const results: YtItem[] = [];
+  // Walk the structure to find videoRenderer entries
+  const walk = (node: unknown) => {
+    if (!node || results.length >= 15) return;
+    if (Array.isArray(node)) { node.forEach(walk); return; }
+    if (typeof node !== "object") return;
+    const obj = node as Record<string, unknown>;
+    if (obj.videoRenderer) {
+      const v = obj.videoRenderer as Record<string, unknown>;
+      const videoId = v.videoId as string | undefined;
+      if (videoId) {
+        const title = ((v.title as { runs?: { text?: string }[] })?.runs?.[0]?.text) ?? "";
+        const thumbs = (v.thumbnail as { thumbnails?: { url: string }[] })?.thumbnails ?? [];
+        const channel = ((v.ownerText as { runs?: { text?: string }[] })?.runs?.[0]?.text) ?? "";
+        const duration = (v.lengthText as { simpleText?: string })?.simpleText;
+        const views = (v.viewCountText as { simpleText?: string })?.simpleText;
+        const published = (v.publishedTimeText as { simpleText?: string })?.simpleText;
+        results.push({
+          title,
+          videoId,
+          url: `https://www.youtube.com/watch?v=${videoId}`,
+          thumbnail: thumbs[thumbs.length - 1]?.url ?? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`,
+          channel,
+          duration,
+          views,
+          published,
+        });
+      }
+    }
+    for (const v of Object.values(obj)) walk(v);
+  };
+  walk(data);
+  return results;
+}
 
 export const Route = createFileRoute("/api/search/youtube")({
   server: {
@@ -13,29 +71,18 @@ export const Route = createFileRoute("/api/search/youtube")({
         const query = requireParam(request, "q");
         if (query instanceof Response) return query;
 
-        // Use the public, no-key Piped instances (open-source YT frontend)
-        const instances = ["https://pipedapi.kavin.rocks", "https://pipedapi.adminforge.de"];
-        for (const base of instances) {
-          try {
-            const res = await fetch(`${base}/search?q=${encodeURIComponent(query)}&filter=videos`);
-            if (!res.ok) continue;
-            const data = await res.json();
-            const items = (data.items ?? []).slice(0, 10).map((it: { url?: string; title?: string; uploaderName?: string; duration?: number; views?: number; thumbnail?: string }) => ({
-              title: it.title,
-              channel: it.uploaderName,
-              duration: it.duration,
-              views: it.views,
-              thumbnail: it.thumbnail,
-              url: it.url ? `https://www.youtube.com${it.url}` : undefined,
-            }));
-            return new Response(JSON.stringify({
-              success: true, creator: "Popkid API", query, result: items,
-            }, null, 2), { headers: { "Content-Type": "application/json", ...corsHeaders } });
-          } catch {
-            continue;
+        try {
+          const items = await scrapeYoutubeSearch(query);
+          if (items.length === 0) {
+            return errorResponse("No results found.", 404, { query });
           }
+          return new Response(
+            JSON.stringify({ success: true, status: 200, creator: "Popkid API", query, result: items }, null, 2),
+            { headers: { "Content-Type": "application/json", ...corsHeaders } },
+          );
+        } catch (e) {
+          return errorResponse(e instanceof Error ? e.message : "YouTube search failed", 502);
         }
-        return errorResponse("All YouTube search instances failed. Try again later.", 502);
       },
     },
   },
