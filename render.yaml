@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: popkid-api
+    runtime: node
+    plan: free
+    region: oregon
+    buildCommand: npm install
+    startCommand: node server/render.mjs
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: LOVABLE_API_KEY
+        sync: false
