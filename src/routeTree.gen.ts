@@ -16,15 +16,23 @@ import { Route as ChangelogRouteImport } from './routes/changelog'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as EndpointsCategoryRouteImport } from './routes/endpoints.$category'
 import { Route as ApiSplatRouteImport } from './routes/api.$'
+import { Route as ApiToolsUploadRouteImport } from './routes/api.tools.upload'
 import { Route as ApiToolsSswebRouteImport } from './routes/api.tools.ssweb'
 import { Route as ApiToolsShortenRouteImport } from './routes/api.tools.shorten'
 import { Route as ApiToolsQrRouteImport } from './routes/api.tools.qr'
+import { Route as ApiTextproGlitchRouteImport } from './routes/api.textpro.glitch'
+import { Route as ApiTempgenInboxRouteImport } from './routes/api.tempgen.inbox'
+import { Route as ApiTempgenEmailRouteImport } from './routes/api.tempgen.email'
 import { Route as ApiStalkerGithubRouteImport } from './routes/api.stalker.github'
+import { Route as ApiSportsStandingsRouteImport } from './routes/api.sports.standings'
+import { Route as ApiSportsLivescoresRouteImport } from './routes/api.sports.livescores'
 import { Route as ApiSearchYoutubeRouteImport } from './routes/api.search.youtube'
 import { Route as ApiSearchLyricsRouteImport } from './routes/api.search.lyrics'
 import { Route as ApiSearchGoogleRouteImport } from './routes/api.search.google'
 import { Route as ApiFunMemeRouteImport } from './routes/api.fun.meme'
 import { Route as ApiFunJokeRouteImport } from './routes/api.fun.joke'
+import { Route as ApiEphotoNeonTextRouteImport } from './routes/api.ephoto.neon-text'
+import { Route as ApiEphoto3dLogoRouteImport } from './routes/api.ephoto.3d-logo'
 import { Route as ApiDownloadYtmp4RouteImport } from './routes/api.download.ytmp4'
 import { Route as ApiDownloadYtmp3RouteImport } from './routes/api.download.ytmp3'
 import { Route as ApiDownloadTwitterRouteImport } from './routes/api.download.twitter'
@@ -77,6 +85,11 @@ const ApiSplatRoute = ApiSplatRouteImport.update({
   path: '/api/$',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiToolsUploadRoute = ApiToolsUploadRouteImport.update({
+  id: '/api/tools/upload',
+  path: '/api/tools/upload',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiToolsSswebRoute = ApiToolsSswebRouteImport.update({
   id: '/api/tools/ssweb',
   path: '/api/tools/ssweb',
@@ -92,9 +105,34 @@ const ApiToolsQrRoute = ApiToolsQrRouteImport.update({
   path: '/api/tools/qr',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiTextproGlitchRoute = ApiTextproGlitchRouteImport.update({
+  id: '/api/textpro/glitch',
+  path: '/api/textpro/glitch',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiTempgenInboxRoute = ApiTempgenInboxRouteImport.update({
+  id: '/api/tempgen/inbox',
+  path: '/api/tempgen/inbox',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiTempgenEmailRoute = ApiTempgenEmailRouteImport.update({
+  id: '/api/tempgen/email',
+  path: '/api/tempgen/email',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiStalkerGithubRoute = ApiStalkerGithubRouteImport.update({
   id: '/api/stalker/github',
   path: '/api/stalker/github',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiSportsStandingsRoute = ApiSportsStandingsRouteImport.update({
+  id: '/api/sports/standings',
+  path: '/api/sports/standings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiSportsLivescoresRoute = ApiSportsLivescoresRouteImport.update({
+  id: '/api/sports/livescores',
+  path: '/api/sports/livescores',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiSearchYoutubeRoute = ApiSearchYoutubeRouteImport.update({
@@ -120,6 +158,16 @@ const ApiFunMemeRoute = ApiFunMemeRouteImport.update({
 const ApiFunJokeRoute = ApiFunJokeRouteImport.update({
   id: '/api/fun/joke',
   path: '/api/fun/joke',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiEphotoNeonTextRoute = ApiEphotoNeonTextRouteImport.update({
+  id: '/api/ephoto/neon-text',
+  path: '/api/ephoto/neon-text',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiEphoto3dLogoRoute = ApiEphoto3dLogoRouteImport.update({
+  id: '/api/ephoto/3d-logo',
+  path: '/api/ephoto/3d-logo',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiDownloadYtmp4Route = ApiDownloadYtmp4RouteImport.update({
@@ -227,15 +275,23 @@ export interface FileRoutesByFullPath {
   '/api/download/twitter': typeof ApiDownloadTwitterRoute
   '/api/download/ytmp3': typeof ApiDownloadYtmp3Route
   '/api/download/ytmp4': typeof ApiDownloadYtmp4Route
+  '/api/ephoto/3d-logo': typeof ApiEphoto3dLogoRoute
+  '/api/ephoto/neon-text': typeof ApiEphotoNeonTextRoute
   '/api/fun/joke': typeof ApiFunJokeRoute
   '/api/fun/meme': typeof ApiFunMemeRoute
   '/api/search/google': typeof ApiSearchGoogleRoute
   '/api/search/lyrics': typeof ApiSearchLyricsRoute
   '/api/search/youtube': typeof ApiSearchYoutubeRoute
+  '/api/sports/livescores': typeof ApiSportsLivescoresRoute
+  '/api/sports/standings': typeof ApiSportsStandingsRoute
   '/api/stalker/github': typeof ApiStalkerGithubRoute
+  '/api/tempgen/email': typeof ApiTempgenEmailRoute
+  '/api/tempgen/inbox': typeof ApiTempgenInboxRoute
+  '/api/textpro/glitch': typeof ApiTextproGlitchRoute
   '/api/tools/qr': typeof ApiToolsQrRoute
   '/api/tools/shorten': typeof ApiToolsShortenRoute
   '/api/tools/ssweb': typeof ApiToolsSswebRoute
+  '/api/tools/upload': typeof ApiToolsUploadRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -261,15 +317,23 @@ export interface FileRoutesByTo {
   '/api/download/twitter': typeof ApiDownloadTwitterRoute
   '/api/download/ytmp3': typeof ApiDownloadYtmp3Route
   '/api/download/ytmp4': typeof ApiDownloadYtmp4Route
+  '/api/ephoto/3d-logo': typeof ApiEphoto3dLogoRoute
+  '/api/ephoto/neon-text': typeof ApiEphotoNeonTextRoute
   '/api/fun/joke': typeof ApiFunJokeRoute
   '/api/fun/meme': typeof ApiFunMemeRoute
   '/api/search/google': typeof ApiSearchGoogleRoute
   '/api/search/lyrics': typeof ApiSearchLyricsRoute
   '/api/search/youtube': typeof ApiSearchYoutubeRoute
+  '/api/sports/livescores': typeof ApiSportsLivescoresRoute
+  '/api/sports/standings': typeof ApiSportsStandingsRoute
   '/api/stalker/github': typeof ApiStalkerGithubRoute
+  '/api/tempgen/email': typeof ApiTempgenEmailRoute
+  '/api/tempgen/inbox': typeof ApiTempgenInboxRoute
+  '/api/textpro/glitch': typeof ApiTextproGlitchRoute
   '/api/tools/qr': typeof ApiToolsQrRoute
   '/api/tools/shorten': typeof ApiToolsShortenRoute
   '/api/tools/ssweb': typeof ApiToolsSswebRoute
+  '/api/tools/upload': typeof ApiToolsUploadRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -296,15 +360,23 @@ export interface FileRoutesById {
   '/api/download/twitter': typeof ApiDownloadTwitterRoute
   '/api/download/ytmp3': typeof ApiDownloadYtmp3Route
   '/api/download/ytmp4': typeof ApiDownloadYtmp4Route
+  '/api/ephoto/3d-logo': typeof ApiEphoto3dLogoRoute
+  '/api/ephoto/neon-text': typeof ApiEphotoNeonTextRoute
   '/api/fun/joke': typeof ApiFunJokeRoute
   '/api/fun/meme': typeof ApiFunMemeRoute
   '/api/search/google': typeof ApiSearchGoogleRoute
   '/api/search/lyrics': typeof ApiSearchLyricsRoute
   '/api/search/youtube': typeof ApiSearchYoutubeRoute
+  '/api/sports/livescores': typeof ApiSportsLivescoresRoute
+  '/api/sports/standings': typeof ApiSportsStandingsRoute
   '/api/stalker/github': typeof ApiStalkerGithubRoute
+  '/api/tempgen/email': typeof ApiTempgenEmailRoute
+  '/api/tempgen/inbox': typeof ApiTempgenInboxRoute
+  '/api/textpro/glitch': typeof ApiTextproGlitchRoute
   '/api/tools/qr': typeof ApiToolsQrRoute
   '/api/tools/shorten': typeof ApiToolsShortenRoute
   '/api/tools/ssweb': typeof ApiToolsSswebRoute
+  '/api/tools/upload': typeof ApiToolsUploadRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -332,15 +404,23 @@ export interface FileRouteTypes {
     | '/api/download/twitter'
     | '/api/download/ytmp3'
     | '/api/download/ytmp4'
+    | '/api/ephoto/3d-logo'
+    | '/api/ephoto/neon-text'
     | '/api/fun/joke'
     | '/api/fun/meme'
     | '/api/search/google'
     | '/api/search/lyrics'
     | '/api/search/youtube'
+    | '/api/sports/livescores'
+    | '/api/sports/standings'
     | '/api/stalker/github'
+    | '/api/tempgen/email'
+    | '/api/tempgen/inbox'
+    | '/api/textpro/glitch'
     | '/api/tools/qr'
     | '/api/tools/shorten'
     | '/api/tools/ssweb'
+    | '/api/tools/upload'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -366,15 +446,23 @@ export interface FileRouteTypes {
     | '/api/download/twitter'
     | '/api/download/ytmp3'
     | '/api/download/ytmp4'
+    | '/api/ephoto/3d-logo'
+    | '/api/ephoto/neon-text'
     | '/api/fun/joke'
     | '/api/fun/meme'
     | '/api/search/google'
     | '/api/search/lyrics'
     | '/api/search/youtube'
+    | '/api/sports/livescores'
+    | '/api/sports/standings'
     | '/api/stalker/github'
+    | '/api/tempgen/email'
+    | '/api/tempgen/inbox'
+    | '/api/textpro/glitch'
     | '/api/tools/qr'
     | '/api/tools/shorten'
     | '/api/tools/ssweb'
+    | '/api/tools/upload'
   id:
     | '__root__'
     | '/'
@@ -400,15 +488,23 @@ export interface FileRouteTypes {
     | '/api/download/twitter'
     | '/api/download/ytmp3'
     | '/api/download/ytmp4'
+    | '/api/ephoto/3d-logo'
+    | '/api/ephoto/neon-text'
     | '/api/fun/joke'
     | '/api/fun/meme'
     | '/api/search/google'
     | '/api/search/lyrics'
     | '/api/search/youtube'
+    | '/api/sports/livescores'
+    | '/api/sports/standings'
     | '/api/stalker/github'
+    | '/api/tempgen/email'
+    | '/api/tempgen/inbox'
+    | '/api/textpro/glitch'
     | '/api/tools/qr'
     | '/api/tools/shorten'
     | '/api/tools/ssweb'
+    | '/api/tools/upload'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -434,15 +530,23 @@ export interface RootRouteChildren {
   ApiDownloadTwitterRoute: typeof ApiDownloadTwitterRoute
   ApiDownloadYtmp3Route: typeof ApiDownloadYtmp3Route
   ApiDownloadYtmp4Route: typeof ApiDownloadYtmp4Route
+  ApiEphoto3dLogoRoute: typeof ApiEphoto3dLogoRoute
+  ApiEphotoNeonTextRoute: typeof ApiEphotoNeonTextRoute
   ApiFunJokeRoute: typeof ApiFunJokeRoute
   ApiFunMemeRoute: typeof ApiFunMemeRoute
   ApiSearchGoogleRoute: typeof ApiSearchGoogleRoute
   ApiSearchLyricsRoute: typeof ApiSearchLyricsRoute
   ApiSearchYoutubeRoute: typeof ApiSearchYoutubeRoute
+  ApiSportsLivescoresRoute: typeof ApiSportsLivescoresRoute
+  ApiSportsStandingsRoute: typeof ApiSportsStandingsRoute
   ApiStalkerGithubRoute: typeof ApiStalkerGithubRoute
+  ApiTempgenEmailRoute: typeof ApiTempgenEmailRoute
+  ApiTempgenInboxRoute: typeof ApiTempgenInboxRoute
+  ApiTextproGlitchRoute: typeof ApiTextproGlitchRoute
   ApiToolsQrRoute: typeof ApiToolsQrRoute
   ApiToolsShortenRoute: typeof ApiToolsShortenRoute
   ApiToolsSswebRoute: typeof ApiToolsSswebRoute
+  ApiToolsUploadRoute: typeof ApiToolsUploadRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -496,6 +600,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiSplatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/tools/upload': {
+      id: '/api/tools/upload'
+      path: '/api/tools/upload'
+      fullPath: '/api/tools/upload'
+      preLoaderRoute: typeof ApiToolsUploadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/tools/ssweb': {
       id: '/api/tools/ssweb'
       path: '/api/tools/ssweb'
@@ -517,11 +628,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiToolsQrRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/textpro/glitch': {
+      id: '/api/textpro/glitch'
+      path: '/api/textpro/glitch'
+      fullPath: '/api/textpro/glitch'
+      preLoaderRoute: typeof ApiTextproGlitchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/tempgen/inbox': {
+      id: '/api/tempgen/inbox'
+      path: '/api/tempgen/inbox'
+      fullPath: '/api/tempgen/inbox'
+      preLoaderRoute: typeof ApiTempgenInboxRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/tempgen/email': {
+      id: '/api/tempgen/email'
+      path: '/api/tempgen/email'
+      fullPath: '/api/tempgen/email'
+      preLoaderRoute: typeof ApiTempgenEmailRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/stalker/github': {
       id: '/api/stalker/github'
       path: '/api/stalker/github'
       fullPath: '/api/stalker/github'
       preLoaderRoute: typeof ApiStalkerGithubRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/sports/standings': {
+      id: '/api/sports/standings'
+      path: '/api/sports/standings'
+      fullPath: '/api/sports/standings'
+      preLoaderRoute: typeof ApiSportsStandingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/sports/livescores': {
+      id: '/api/sports/livescores'
+      path: '/api/sports/livescores'
+      fullPath: '/api/sports/livescores'
+      preLoaderRoute: typeof ApiSportsLivescoresRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/search/youtube': {
@@ -557,6 +703,20 @@ declare module '@tanstack/react-router' {
       path: '/api/fun/joke'
       fullPath: '/api/fun/joke'
       preLoaderRoute: typeof ApiFunJokeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/ephoto/neon-text': {
+      id: '/api/ephoto/neon-text'
+      path: '/api/ephoto/neon-text'
+      fullPath: '/api/ephoto/neon-text'
+      preLoaderRoute: typeof ApiEphotoNeonTextRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/ephoto/3d-logo': {
+      id: '/api/ephoto/3d-logo'
+      path: '/api/ephoto/3d-logo'
+      fullPath: '/api/ephoto/3d-logo'
+      preLoaderRoute: typeof ApiEphoto3dLogoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/download/ytmp4': {
@@ -709,16 +869,33 @@ const rootRouteChildren: RootRouteChildren = {
   ApiDownloadTwitterRoute: ApiDownloadTwitterRoute,
   ApiDownloadYtmp3Route: ApiDownloadYtmp3Route,
   ApiDownloadYtmp4Route: ApiDownloadYtmp4Route,
+  ApiEphoto3dLogoRoute: ApiEphoto3dLogoRoute,
+  ApiEphotoNeonTextRoute: ApiEphotoNeonTextRoute,
   ApiFunJokeRoute: ApiFunJokeRoute,
   ApiFunMemeRoute: ApiFunMemeRoute,
   ApiSearchGoogleRoute: ApiSearchGoogleRoute,
   ApiSearchLyricsRoute: ApiSearchLyricsRoute,
   ApiSearchYoutubeRoute: ApiSearchYoutubeRoute,
+  ApiSportsLivescoresRoute: ApiSportsLivescoresRoute,
+  ApiSportsStandingsRoute: ApiSportsStandingsRoute,
   ApiStalkerGithubRoute: ApiStalkerGithubRoute,
+  ApiTempgenEmailRoute: ApiTempgenEmailRoute,
+  ApiTempgenInboxRoute: ApiTempgenInboxRoute,
+  ApiTextproGlitchRoute: ApiTextproGlitchRoute,
   ApiToolsQrRoute: ApiToolsQrRoute,
   ApiToolsShortenRoute: ApiToolsShortenRoute,
   ApiToolsSswebRoute: ApiToolsSswebRoute,
+  ApiToolsUploadRoute: ApiToolsUploadRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}
