@@ -4,10 +4,12 @@ services:
     runtime: node
     plan: free
     region: oregon
-    buildCommand: npm install
-    startCommand: node server/render.mjs
+    buildCommand: npm run render:build
+    startCommand: npm start
     envVars:
       - key: NODE_VERSION
-        value: "20"
+        value: "20.20.1"
+      - key: NODE_ENV
+        value: production
       - key: LOVABLE_API_KEY
         sync: false

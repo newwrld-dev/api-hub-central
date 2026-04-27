@@ -15,9 +15,9 @@ Render will auto-detect `render.yaml`. If it doesn't, fill in manually:
 | Setting          | Value                              |
 | ---------------- | ---------------------------------- |
 | **Runtime**      | Node                               |
-| **Build Command**| `npm install`                      |
-| **Start Command**| `node server/render.mjs`           |
-| **Node Version** | `20` (set in Environment)          |
+| **Build Command**| `npm run render:build`             |
+| **Start Command**| `npm start`                        |
+| **Node Version** | `20.20.1` (set in Environment)     |
 | **Plan**         | Free is fine                       |
 
 ## 3. Add environment variables
@@ -27,7 +27,8 @@ In Render → your service → **Environment**, add:
 | Key                | Value                                                |
 | ------------------ | ---------------------------------------------------- |
 | `LOVABLE_API_KEY`  | (get this from Lovable → Cloud → AI → API key)       |
-| `NODE_VERSION`     | `20`                                                 |
+| `NODE_VERSION`     | `20.20.1`                                            |
+| `NODE_ENV`         | `production`                                         |
 
 > Only `LOVABLE_API_KEY` is required for the AI endpoints
 > (`/api/ai/ai`, `/api/ai/gpt4o`, `/api/ai/gemini`, `/api/ai/claude`, `/api/ai/imagine`).
